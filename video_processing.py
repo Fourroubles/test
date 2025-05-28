@@ -18,15 +18,11 @@ class VideoProcessing:
         video.write_videofile(path_folder)
 
     @staticmethod
-    def concatenateVideo(path_videos):
+    def concatenateVideo(videos):
         '''
          Метод обьединяющий несколько видео в один видеопоток
         '''
-        tmp_video = []
-        for video in path_videos:
-            tmp_video.append(VideoFileClip(video))
-
-        concatenate_video = concatenate_videoclips(tmp_video)
+        concatenate_video = concatenate_videoclips(videos)
 
         return concatenate_video
     
